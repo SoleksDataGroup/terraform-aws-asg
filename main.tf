@@ -1,17 +1,9 @@
 // Module: aws/asg
-// Description:
+// Description: AWS Autoscaling group
 //
 
-locals {
-  instance_subnet = flatten([
-    for subnet in var.subnet_ids: [
-      for i in range(var.group_size): subnet
-    ]
-  ])
-}
-
 resource "aws_security_group" "asg-security-group" {
-  name = "${var.name_prefix}-${var.service_type}-sg"
+  name = "${var.name_prefix}-sg"
   vpc_id = var.vpc_id
 
   dynamic "ingress" {
