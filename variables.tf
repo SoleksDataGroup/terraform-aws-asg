@@ -26,8 +26,8 @@ variable "group_max_size" {
   default = 1
 }
 
-variable "group_desired_size" {
-  description = "Autoscale group desired size per availability zone"
+variable "group_desired_capacity" {
+  description = "Autoscale group desired capacity per availability zone"
   type = number
   default = 1
 }
