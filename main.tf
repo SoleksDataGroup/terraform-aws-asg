@@ -87,6 +87,8 @@ resource "aws_autoscaling_group" "asg" {
   min_size           = var.group_min_size
   max_size           = var.group_max_size
 
+  protect_from_scale_in = var.protect_from_scale_in
+
   vpc_zone_identifier = [var.subnet_ids[count.index]]
 
   dynamic "warm_pool" {

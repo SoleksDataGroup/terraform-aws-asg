@@ -32,6 +32,12 @@ variable "group_desired_capacity" {
   default = 1
 }
 
+variable "protect_from_scale_in" {
+  description = "Whether newly launched instances are automatically protected from termination by Amazon EC2 Auto Scaling when scaling in."
+  type = bool
+  default = false
+}
+
 variable "ami_name" {
   description = "Service group AMI name"
   type = string
