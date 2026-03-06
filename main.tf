@@ -108,4 +108,9 @@ resource "aws_autoscaling_group" "asg" {
     id = aws_launch_template.asg-launch-tmpl.id
     version = "$Latest"
   }
+  lifecycle {
+    ignore_changes = [
+      tags, tags_all
+    ]
+  }
 }
